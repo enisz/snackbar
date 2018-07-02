@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SnackbarModule } from './snackbar/snackbar.module';
 
@@ -12,7 +12,8 @@ import { SnackbarModule } from './snackbar/snackbar.module';
   ],
   imports: [
     BrowserModule,
-    SnackbarModule
+    SnackbarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
