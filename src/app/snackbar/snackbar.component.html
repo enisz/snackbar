@@ -1,0 +1,13 @@
+<div class="snackbar-container d-flex flex-column">
+  <div [@snackbarAnimation] class="alert d-flex align-items-center" [ngClass]="['alert-' + snackbar.config.type]" role="alert" *ngFor="let snackbar of snackbars; let index = index;">
+    <i class="fa fa-fw" [ngClass]="['fa-' + snackbar.config.icon]" style="margin-right: 10px;"></i>
+    
+    <small [innerHTML]="snackbar.config.message"></small>
+
+    <span class="flex-spacer"></span>
+
+    <button type="button" class="close" aria-label="Close" (click)="removeMe(index)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>

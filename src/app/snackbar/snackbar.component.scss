@@ -1,0 +1,32 @@
+.snackbar-container
+{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+
+@media only screen and (max-width: 576px) {
+	.alert
+	{
+        margin: 2px 0px 0px 0px;
+        width: 100%;
+    }
+    
+    .snackbar-container
+    {
+        left: 0px;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+	.alert
+	{
+		margin: 0px 10px 10px 0px;
+		min-width: 300px;
+	}
+}
+
+.flex-spacer
+{
+    flex-grow: 1;
+}
