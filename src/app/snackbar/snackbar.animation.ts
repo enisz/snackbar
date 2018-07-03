@@ -32,9 +32,9 @@ const animationOptions = {
     }
 }
 
-export const snackbarAnimation =
+export const SnackbarAnimation =
     trigger(
-        'snackbarAnimation', [
+        'SnackbarAnimation', [
             transition(':enter', [
                 style(animationOptions.enter.from),
                 animate(animationDuration + 'ms ' + animationOptions.enter.animation, style(animationOptions.enter.to))

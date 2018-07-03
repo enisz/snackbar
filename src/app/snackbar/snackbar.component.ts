@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { snackbarAnimation } from './snackbar.animation';
+import { SnackbarAnimation } from './snackbar.animation';
 import { SnackbarService } from './snackbar.service';
 
 @Component({
   selector: 'snackbar',
   templateUrl: './snackbar.component.html',
   styleUrls: ['./snackbar.component.scss'],
-  animations : [ snackbarAnimation ]
+  animations : [ SnackbarAnimation ]
 })
 export class SnackbarComponent implements OnInit {
 
