@@ -6,7 +6,7 @@
 
     <span class="flex-spacer"></span>
 
-    <button type="button" class="close" aria-label="Close" (click)="removeMe(index)">
+    <button type="button" class="close" aria-label="Close" (click)="removeMe(index)" *ngIf="snackbar.config.close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>

@@ -2,5 +2,6 @@ export interface SnackbarConfig {
     type? : string,
     message : string,
     timeout? : number,
-    icon? : string
+		icon? : string,
+		close? : boolean,
 }

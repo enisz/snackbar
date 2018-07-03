@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SnackbarService } from './snackbar/snackbar.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -28,18 +28,24 @@ export class AppComponent implements OnInit {
     );
 
     this.configForm = new FormGroup({
-      type : new FormControl('primary'),
-      icons : new FormControl('500px')
+			type : new FormControl('info'),
+			timeout : new FormControl(3000),
+			icons : new FormControl('info-circle'),
+			message : new FormControl('Test snackbar!', [Validators.required]),
+			close : new FormControl(true)
     });
   }
 
   public addSnackbar()
   {
-    const types = ['primary', 'secondary', 'light', 'dark', 'success', 'danger', 'warning', 'info'];
-
-    const index = Math.round(Math.random() * ((types.length - 1) - 0) + 0);
-    console.log(index);
-
-    this.snackbarService.addSnackbar({ type : types[index], message : `Generated ${types[index]} snackbar!` });
+		const config = {
+			type : this.configForm.get('type').value,
+			message : this.configForm.get('message').value,
+			timeout : this.configForm.get('timeout').value,
+			icon : this.configForm.get('icons').value,
+			close : this.configForm.get('close').value
+		};
+		console.log(config);
+    this.snackbarService.addSnackbar(config);
   }
 }

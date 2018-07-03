@@ -8,18 +8,14 @@
     <div class="row">
       <div class="col-12">
         <div class="form-group">
-          <label for="type">Example select</label>
-          <select class="form-control" id="type">
-            <option *ngFor="let type of snackbarTypes">{{ type }}</option>
+          <label for="type">Snackbar type</label>
+          <select class="form-control" id="type" formControlName="type">
+            <option *ngFor="let type of snackbarTypes" [value]="type">{{ type }}</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="icon">Icon</label>
-          <input type="text" class="form-control" id="icon">
-        </div>
-        <div class="form-group">
           <label for="timeout">Timeout</label>
-          <input type="number" class="form-control" id="timeout">
+          <input type="number" class="form-control" id="timeout" formControlName="timeout">
         </div>
         <div class="form-group">
             <div class="input-group">
@@ -32,6 +28,21 @@
                 <option *ngFor="let icon of allIcons" [value]="icon">{{ icon }}</option>
               </select>
             </div>
+				</div>
+				<div class="form-group">
+          <label for="message">Message</label>
+          <input type="text" class="form-control" id="message" formControlName="message">
+				</div>
+				<div class="form-group">
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="close-button" formControlName="close">
+						<label class="custom-control-label" for="close-button">Add close button</label>
+					</div>
+				</div>
+				<div class="form-group">
+          <button class="btn btn-primary" type="submit" (click)="addSnackbar()" [disabled]="!configForm.valid">
+						Add Snackbar
+					</button>
         </div>
       </div>
     </div>
