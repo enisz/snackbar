@@ -3,5 +3,11 @@ export interface SnackbarConfig {
     message : string,
     timeout? : number,
 		icon? : string,
-		close? : boolean,
+    close? : boolean,
+    buttons? : Array<SnackbarButton>
+}
+
+interface SnackbarButton {
+  label : string,
+  action : Function
 }

@@ -25,9 +25,6 @@ export class SnackbarComponent implements OnInit {
   ngOnInit() {
     this.snackbarService.getObservable().subscribe(
       snackbarConfig => {
-
-        console.log(snackbarConfig);
-        
         const index = setTimeout( () => {
           for(let x in this.snackbars)
             if(this.snackbars[x].id == index)

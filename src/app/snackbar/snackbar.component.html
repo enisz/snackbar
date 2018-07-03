@@ -2,12 +2,22 @@
   <div [@SnackbarAnimation] class="alert d-flex align-items-center" [ngClass]="['alert-' + snackbar.config.type]" role="alert" *ngFor="let snackbar of snackbars; let index = index;">
     <i class="fa fa-fw" [ngClass]="['fa-' + snackbar.config.icon]" style="margin-right: 10px;"></i>
     
-    <small [innerHTML]="snackbar.config.message"></small>
+    <small [innerHTML]="snackbar.config.message" class="snackbar-output"></small>
 
     <span class="flex-spacer"></span>
+
+    <div *ngIf="snackbar.config.buttons">
+      <button *ngFor="let button of snackbar.config.buttons" type="button" class="btn btn-sm" [ngClass]="['btn-' + snackbar.config.type]" aria-label="Close" (click)="button.action()">
+        {{ button.label }}
+      </button>
+    </div>
 
     <button type="button" class="close" aria-label="Close" (click)="removeMe(index)" *ngIf="snackbar.config.close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
 </div>
+
+<pre>
+{{ snackbars | json }}
+</pre>

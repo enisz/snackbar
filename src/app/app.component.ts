@@ -23,13 +23,13 @@ export class AppComponent implements OnInit {
     this.snackbarService.getObservable().subscribe(
       response =>
       {
-        console.log(response);
+        //console.log(response);
       }
     );
 
     this.configForm = new FormGroup({
 			type : new FormControl('info'),
-			timeout : new FormControl(3000),
+			timeout : new FormControl(5000),
 			icons : new FormControl('info-circle'),
 			message : new FormControl('Test snackbar!', [Validators.required]),
 			close : new FormControl(true)
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
 			icon : this.configForm.get('icons').value,
 			close : this.configForm.get('close').value
 		};
-		console.log(config);
+		//console.log(config);
     this.snackbarService.addSnackbar(config);
   }
 }
