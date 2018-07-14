@@ -47,5 +47,15 @@ export class AppComponent implements OnInit {
 		};
 		//console.log(config);
     this.snackbarService.addSnackbar(config);
-  }
+	}
+	
+	public addCustomSnackbar()
+	{
+		console.log('addCustomSnackbar()');
+
+		this.snackbarService.addSnackbar({
+			message : 'wooooo!',
+			timeout : 50000
+		});
+	}
 }

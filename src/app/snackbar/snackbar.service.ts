@@ -6,7 +6,7 @@ const defaultConfig: SnackbarConfig = {
 	type : 'info',
 	timeout : 5000,
 	message : '',
-  close : true,
+  close : false,
   // buttons : [
   //   {
   //     label : 'ok',

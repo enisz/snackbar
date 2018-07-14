@@ -2,7 +2,8 @@
 {
     position: fixed;
     right: 0px;
-    bottom: 0px;
+		bottom: 0px;
+		z-index: 9999;
 }
 
 @media only screen and (max-width: 576px) {
@@ -21,8 +22,7 @@
 @media only screen and (min-width: 576px) {
 	.alert
 	{
-		margin: 0px 10px 10px 0px;
-		min-width: 300px;
+		margin: 0px 10px 10px 10px;
 	}
 }
 
@@ -31,7 +31,19 @@
     flex-grow: 1;
 }
 
-.snackbar-output
+.snackbar-close
 {
-    margin-right: 20px;
+    margin-left: 20px;
 }
+
+.snackbar-buttons
+{
+	margin-left: 10px;
+}
+
+/*
+.snackbar-icon
+{
+	margin-top: 5px;
+}
+*/
